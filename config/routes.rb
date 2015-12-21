@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root 'welcome#index'
+  root 'items#new'
 
   get    'signup', to: 'users#new'
   get    'login' , to: 'sessions#new'
