@@ -41,7 +41,7 @@ class OwnershipsController < ApplicationController
 
   def destroy
     @item = Item.find(params[:item_id])
-    if (params[:type] == 'Haved')
+    if (params[:type] == 'Have')
       current_user.unhave(@item)
     else
       current_user.unwant(@item)
