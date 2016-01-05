@@ -14,11 +14,6 @@ class User < ActiveRecord::Base
 
   has_many :ownerships , foreign_key: "user_id", dependent: :destroy
   has_many :items ,through: :ownerships
-  # want, haveクラスとの連携
-  has_many :wants, class_name: "Want", foreign_key: "user_id", dependent: :destroy
-  has_many :want_items , through: :wants, source: :item
-  has_many :haves, class_name: "Have", foreign_key: "user_id", dependent: :destroy
-  has_many :have_items , through: :haves, source: :item
 
 
   # 他のユーザーをフォローする
@@ -34,7 +29,7 @@ class User < ActiveRecord::Base
     following_users.include?(other_user)
   end
 
-  ## TODO 実装
+   ## TODO 実装
   def have(other_item)
     haves.find_or_create_by(item_id: other_item.id)
   end
