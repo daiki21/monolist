@@ -5,7 +5,7 @@
     <%= yield :head %>
   <% else %>
     <title>
-      <% content_for?(:name) %>のページ - Monolist
+      <%= yield :title %>のページ - Monolist
     </title>
   <% end %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
